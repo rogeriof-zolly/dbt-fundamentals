@@ -1,9 +1,9 @@
 select
-    ID as payment_id,
-    ORDERID as order_id,
-    PAYMENTMETHOD as payment_method,
-    STATUS as status,
-    AMOUNT / 100 as amount,
-    CREATED as created_at
+    id as payment_id,
+    orderid as order_id,
+    paymentmethod as payment_method,
+    status as status,
+    amount / 100 as amount,
+    created as created_at
 
-from `jaffleshop-499601.stripe.payments`
+from {{source('stripe', 'payment')}}
